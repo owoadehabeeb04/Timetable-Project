@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University Timetable</title>
+    <style>
+      /* Base styles */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: white;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      /* Styling for heading */
+      h1 {
+        font-size: 2.5em;
+        margin: 10px 0;
+        font-weight: bold;
+      }
+
+      /* Description text */
+      p {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+      }
+
+      /* Button styling */
+      a {
+        text-decoration: none;
+        color: white;
+        background-color: #007bff;
+        padding: 15px 25px;
+        border-radius: 30px;
+        font-size: 1.2em;
+        font-weight: bold;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+
+      /* Hover effect for button */
+      a:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+      }
+
+      /* Logo styling */
+      img {
+        max-width: 150px;
+        margin-bottom: 20px;
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      /* Background fade-in animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <img src="{% static 'timetable/logo.png' %}" alt="Bowen University Logo" /> -->
+    <h1>Bowen University</h1>
+    <h1>Welcome to the University Timetable App</h1>
+    <p>Access your department's timetable easily!</p>
+    <a href="/timetable/">Get Started</a>
+
+    <!-- Background Image Script -->
+    <script>
+      // List of background images
+      // List of background images
+      const backgrounds = [
+        "https://bowenstudent.bowen.edu.ng/img/login-bg5.jpg",
+        "https://bowenstudent.bowen.edu.ng/img/login-bg3.jpg",
+        "https://bowenstudent.bowen.edu.ng/img/login-bg1.jpg",
+        "https://bowenstudent.bowen.edu.ng/img/login-bg9.jpg",
+      ];
+
+      // Randomly select a background
+      const randomBackground =
+        backgrounds[Math.floor(Math.random() * backgrounds.length)];
+
+      // Apply the random background to the body
+      document.body.style.backgroundImage = `url(${randomBackground})`;
+    </script>
+  </body>
+</html>

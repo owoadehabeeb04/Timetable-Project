@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select Your Timetable</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      .form-container {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 400px;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .form-container input,
+      .form-container select,
+      .form-container button {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1em;
+        background-color: #fafafa;
+        transition: background-color 0.3s ease;
+      }
+
+      .form-container input:focus,
+      .form-container select:focus,
+      .form-container button:focus {
+        outline: none;
+        border-color: #007bff;
+        background-color: #f1f7ff;
+      }
+
+      button {
+        background-color: #0056b3;
+        color: black;
+        cursor: pointer;
+        border: none;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+        color: white;
+      }
+
+      .form-container label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        text-align: left;
+      }
+
+      .form-container select {
+        height: 40px;
+        font-size: 1em;
+      }
+
+      .form-container input[type="text"] {
+        height: 40px;
+      }
+
+      .form-container .csrf-token {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>Select Your Timetable</h1>
+      <form method="post">
+        {% csrf_token %}
+        <div class="csrf-token">{{ form.as_p }}</div>
+        <button type="submit">View Timetable</button>
+      </form>
+    </div>
+
+    <script>
+      // Array of background image URLs
+      const backgrounds = [
+        "url('https://bowenstudent.bowen.edu.ng/img/login-bg5.jpg')",
+        "url('https://bowenstudent.bowen.edu.ng/img/login-bg3.jpg')",
+        "url('https://bowenstudent.bowen.edu.ng/img/login-bg1.jpg')",
+        "url('https://bowenstudent.bowen.edu.ng/img/login-bg9.jpg')",
+      ];
+
+      // Randomly select a background
+      const randomBackground =
+        backgrounds[Math.floor(Math.random() * backgrounds.length)];
+
+      // Apply the random background to the body
+      document.body.style.backgroundImage = randomBackground;
+    </script>
+  </body>
+</html>
